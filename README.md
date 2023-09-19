@@ -18,3 +18,29 @@ Some calculations for the design will start on it's own, but will be limited on 
 3. Faire des calculs en temps réel.
 
 4. Ajouter des fonctionnalitées.
+
+
+
+
+
+
+########  Classe Rêgle  #######
+
+
+
+
+
+
+##### Données #####
+
+
+
+#### Calculs ####
+
+
+
+
+
+## Résultats/interpretation ##
+
+
