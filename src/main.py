@@ -1,10 +1,34 @@
 # Revixa1 2023
-import rule.py
+import rules
+import argparse
+import random
+
+
+
 
 def main():
-    simpleRule = Rule('1+2')
-    Rule.getEquation()
-    Rule.ExecuteRule66()
+
+    parser = argparse.ArgumentParser(prog='Thumb Rule Designer')
+  
+    # Adding Argument
+    parser.add_argument('inputRule',
+                    metavar ='EQN',
+                    type = str,
+                    help ='enter a python equation')
+
+  
+
+  
+    args = parser.parse_args()
+    print(args)
+ 
+    simpleRule = rules.Rule(args.inputRule)
+    print(simpleRule.getEquation())
+    print(simpleRule.getVarDict())
+    for i in simpleRule.getVarDict():
+        simpleRule.setVarDict(i,random.randint(0,100))
+    print(simpleRule.getVarDict())
+    print(simpleRule.ExecuteRule66())
     
 
 
