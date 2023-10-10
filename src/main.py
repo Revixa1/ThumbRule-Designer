@@ -16,11 +16,10 @@ def main():
                     type = str,
                     help ='enter a python equation')
 
-  
-
-  
     args = parser.parse_args()
     print(args)
+
+    
  
     simpleRule = rules.Rule(args.inputRule)
     print(simpleRule.getEquation())
