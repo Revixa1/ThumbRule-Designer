@@ -1,5 +1,5 @@
 import numexpr
-import re
+import math
 
 class Rule:
     def __init__(self,newequation :str):
@@ -22,18 +22,20 @@ class Rule:
         return numexpr.evaluate(self.equation,local_dict=self.VarDict)
 
     def MakeVarDict(self):
-        delim=['+','-','/','*','**','(',')']
+        delim=['+','-','/','*','**','(',')',',']
+        fcnlist=['sqrt','exp','expm1','ceil','floor','fmod','log1p','log10','sin','cos','tan','sinh','cosh','tanh']
         vrs=self.equation
         
         for i in delim:
             vrs=vrs.replace(i,' ')
+
         
         vrs=vrs.split()
-        print(vrs)
+        
 
         cnt=0
         for i in range(len(vrs)):
-            if vrs[i-cnt].isdigit():
+            if vrs[i-cnt].isdigit() or (vrs[i-cnt] in fcnlist):
                 vrs.pop(i-cnt)
                 cnt=cnt+1
 

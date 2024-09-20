@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 pyqt5 = "*"
+icecream = "*"
+polars = {extras = ["all"], version = "*"}
+numexpr = "*"
 
 [dev-packages]
 

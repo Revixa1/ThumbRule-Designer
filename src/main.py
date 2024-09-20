@@ -2,6 +2,7 @@
 import rules
 import argparse
 import random
+from icecream import ic
 
 
 
@@ -17,19 +18,20 @@ def main():
                     help ='enter a python equation')
 
     args = parser.parse_args()
-    print(args)
+    ic(args)
 
     
  
     simpleRule = rules.Rule(args.inputRule)
-    print(simpleRule.getEquation())
-    print(simpleRule.getVarDict())
+    ic(simpleRule.getEquation())
+    ic(simpleRule.getVarDict())
     for i in simpleRule.getVarDict():
         simpleRule.setVarDict(i,random.randint(0,100))
-    print(simpleRule.getVarDict())
-    print(simpleRule.ExecuteRule66())
+    ic(simpleRule.getVarDict())
+    ic(simpleRule.ExecuteRule66())
     
 
+def ParseInput(optimisationDesign):
 
 
 
